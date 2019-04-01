@@ -2,9 +2,24 @@
 var topics = ["Justin Bieber", "Fleetwood Mac", "Quavo", "Queen", "Lil Wayne", "YG"
 ];
 
+// create buttons
+function buttons() {
+    $(".buttons-view").empty();
+
+    // loop through topics creating buttons
+    for (var i = 0; i < topics.length; i++) {
+        var button = $("<button>");
+        button.addClass("singer-button")
+        button.attr("data-name", topics[i]);
+        button.text(topics[i]);
+        $(".buttons-view").append(button);
+    };
+}; buttons();
+
+// function to show GIFs and ratings
 function display() {
 
-    // declaring singer variable as the data name of the button clicked
+    // when clicking button, this variable grabs that singers name
     var singer = $(this).attr("data-name");
     console.log(singer);
 
@@ -20,66 +35,45 @@ function display() {
         method: "GET"
     }).then(function (response) {
 
-        // data of gif
+        // retrieving data of gif
         var results = response.data;
         console.log(results);
 
         for (var j = 0; j < results.length; j++) {
-            var animated = response.data[j].images.fixed_height.url;
-            var still = response.data[j].images.fixed_height_still.url;
-            var p = $("<p>").text("Rating: " + results[j].rating);
-            var gifDiv = $('<div class="gif-item">');
-            // // createBox(stillImg, animatedImg);
-            gifDiv.append(p);
-            // gifDiv.append(stillImg);
-            // $newImg.addClass("img-box");
-            console.log(gifDiv);
-            $(".gifs").prepend(gifDiv);
-            //console.log($('.results').html());
 
+            // create div to hold results
+            //var giphy = $("<div class=gifss>");
+
+            // creating image variable
+            var image = $("<img>");
+
+            // adding the attribute of the gif to image variable
+            image.attr("src", results[j].images.fixed_height_still.url);
+
+           // image.attr("data-still", results[j].images.fixed_height_still.url);
+
+           // telling gif to be still
+            image.attr("data-state", "still");
+
+            //image.addClass("gif");
+
+            // adding the gifs to the top of the page
+            $(".gifs").prepend(image);
+
+            // creating p tag for rating of gif
+            var p = $("<p>").text("Rating: " + results[j].rating);
+
+            // create new div for rating
+            var rating = $('<div class="gif-rating">');
+
+            // appending the p tag into the new rating variable 
+            rating.append(p);
+
+            // adding the rating to the page
+            $(".gifs").prepend(rating);
         };
     });
-}
-
-
-
-// div to hold the musician
-//var singerDiv = $("<div class='singer'>");
-
-// variable for rating
-//var ratingGif = response.data.rating;
-//console.log(ratingGif);
-
-// element to have the rating displayed
-//var showRating = $("<p>").text("Rating: " + ratingGif);
-
-// Displaying the rating
-//singerDiv.text(showRating);
-
-//$(".gifs").append(singerDiv);
-
-        // click on button and 10 static gifs are pulled from that API and shown on page
-        // var gif = $("<img>").attr("src", imgURL);
-
-        // click on pic and it moves, clicks to stop
-
-
-  
-
-
-// create buttons
-function buttons() {
-    $(".buttons-view").empty();
-
-    // loop through topics creating buttons
-    for (var i = 0; i < topics.length; i++) {
-        var button = $("<button>");
-        button.addClass("singer-button")
-        button.attr("data-name", topics[i]);
-        button.text(topics[i]);
-        $(".buttons-view").append(button);
-    }
-} //buttons();
+};
 
 // adding new button
 $("#add-singer").on("click", function (event) {
@@ -92,8 +86,8 @@ $("#add-singer").on("click", function (event) {
     buttons();
 });
 
-
+// telling document to run the display function when a singer button is clicked
 $(document).on("click", ".singer-button", display);
 
-buttons();
+
 
