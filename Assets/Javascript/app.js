@@ -55,7 +55,8 @@ function display() {
            // telling gif to be still
             image.attr("data-state", "still");
 
-            //image.addClass("gif");
+            // adding class to each gif
+            image.addClass("gif");
 
             // adding the gifs to the top of the page
             $(".gifs").prepend(image);
@@ -84,6 +85,20 @@ $("#add-singer").on("click", function (event) {
     topics.push(singer1);
 
     buttons();
+});
+
+$(document).on("click", ".gif", function(){
+    var state = $(this).attr("data-state");
+    console.log("state: " + state);
+
+    if (state == "still") {
+        $(this).attr("src", $(this).data("animate"));
+        $(this).attr("data-state", "animate");
+       }
+       else (state == "animate") 
+        $(this).attr("src", $(this).data("still"));
+        $(this).attr("data-state", "still");
+       
 });
 
 // telling document to run the display function when a singer button is clicked
