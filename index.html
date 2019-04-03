@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,29 +9,41 @@
     <link rel="stylesheet" type="text/css" href="Assets/CSS/style.css">
     <title>Music Giphy</title>
 </head>
+
 <body>
 
-<h1 class="title">
-    Music Gifs!
-</h1>
+    <div id="container">
 
- <!-- buttons will show up here  -->
-<div class="buttons-view"></div>
+        <!-- page title  -->
+        <h1 class="title">
+            Music Gifs!
+        </h1>
 
-<form id="gif-form">
-    <label for="singer-input">Add your favorite musical artist!</label>
-    <input type="text" id="gif-input">
-    <br>
+        <!-- buttons will show up here  -->
+        <div id="buttons">
+            <div class="buttons-view"></div>
+        </div>
 
-    <!-- button to add new singer -->
-    <input id="add-singer" type="submit" value="Add artist">
-</form>
+        <!-- search input box  -->
+        <form id="gif-form">
+            <label id="label">
+                Add your favorite musical artist!
+            </label>
+            <input type="text" id="gif-input">
+            <br>
 
- <!-- gifs will show up here  -->
-<div class="gifs"></div>
+            <!-- button to add new singer -->
+            <input id="add-singer" type="submit" value="Add artist">
+        </form>
+
+        <!-- gifs will show up here  -->
+        <div class="gifs"></div>
+
+    </div>
 
 
 
-<script src="Assets/Javascript/app.js"></script>
+    <script src="Assets/Javascript/app.js"></script>
 </body>
+
 </html>

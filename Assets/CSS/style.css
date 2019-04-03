@@ -1,7 +1,58 @@
-.buttons-view {
-    margin-bottom: 30px;
+body {
+    background-color: lightgray;
+}
+
+#container{
+    width: 80%;
+    margin: 30px auto;
+}
+
+.title {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#gifs{
+    float: left;
+    width: 70%;
+}
+
+#gif-form{
+    float:right;
+    width: 30%;
+}
+
+#label {
+    margin-bottom: 10px;
 }
 
 #gif-input {
-    margin-bottom: 30px;
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+#add-singer {
+    padding: 10px;
+    margin-top: 10px;
+    margin-left:68px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+
+.singer-button {
+    padding: 15px;
+    margin-bottom: 10px;
+    margin-right:10px;
+    background-color: red;
+    color:white;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    }
+
+.submit{
+   margin-top:15px;
 }

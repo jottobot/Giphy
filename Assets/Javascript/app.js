@@ -1,9 +1,10 @@
 // array of topic strings
-var topics = ["Justin Bieber", "Fleetwood Mac", "Quavo", "Queen", "Lil Wayne", "YG"
+var topics = ["Justin Bieber", "Fleetwood Mac", "Quavo", "Queen", "Lil Wayne", "YG", "Bruce Springsteen", "Billy Joel"
 ];
 
 // create buttons
 function buttons() {
+    // prevents repeat buttons
     $(".buttons-view").empty();
 
     // loop through topics creating buttons
@@ -15,6 +16,17 @@ function buttons() {
         $(".buttons-view").append(button);
     };
 }; buttons();
+
+// adding new button
+$("#add-singer").on("click", function (event) {
+    event.preventDefault();
+
+    var singer1 = $("#gif-input").val().trim();
+
+    topics.push(singer1);
+
+    buttons();
+});
 
 // function to show GIFs and ratings
 function display() {
@@ -47,16 +59,19 @@ function display() {
             // creating image variable
             var image = $("<img>");
 
-            // adding the attribute of the gif to image variable
-            image.attr("src", results[j].images.fixed_height_still.url);
+                image.attr("data-animate", results[j].images.fixed_height.url);
+            
+                image.attr("data-state","still");
 
-           // image.attr("data-still", results[j].images.fixed_height_still.url);
+                image.attr("src", results[j].images.fixed_height_still.url);
 
-           // telling gif to be still
-            image.attr("data-state", "still");
+                image.attr("data-still", results[j].images.fixed_height_still.url);
 
+            
             // adding class to each gif
             image.addClass("gif");
+
+            image.attr("data-animate", results[j].images.fixed_height.url)
 
             // adding the gifs to the top of the page
             $(".gifs").prepend(image);
@@ -76,30 +91,22 @@ function display() {
     });
 };
 
-// adding new button
-$("#add-singer").on("click", function (event) {
-    event.preventDefault();
-
-    var singer1 = $("#gif-input").val().trim();
-
-    topics.push(singer1);
-
-    buttons();
-});
-
-$(document).on("click", ".gif", function(){
+// changing gif to animate
+$(document).on("click", ".gif", function () {
     var state = $(this).attr("data-state");
     console.log("state: " + state);
 
-    if (state == "still") {
-        $(this).attr("src", $(this).data("animate"));
+if (state == "still") {
+        var sourceAnimate = $(this).attr("data-animate");
+        $(this).attr("src", sourceAnimate);
         $(this).attr("data-state", "animate");
-       }
-       else (state == "animate") 
-        $(this).attr("src", $(this).data("still"));
+      }
+      else if (state == "animate") {
+        var sourceStill = $(this).attr("data-still");
+        $(this).attr("src", sourceStill);
         $(this).attr("data-state", "still");
-       
-});
+      };
+    });
 
 // telling document to run the display function when a singer button is clicked
 $(document).on("click", ".singer-button", display);
