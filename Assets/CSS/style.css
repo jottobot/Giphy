@@ -2,7 +2,7 @@ body {
     background-color: lightgray;
 }
 
-#container{
+#container {
     width: 80%;
     margin: 30px auto;
 }
@@ -14,12 +14,12 @@ body {
     margin-bottom: 50px;
 }
 
-#gifs{
+#gifs {
     float: left;
     width: 70%;
 }
 
-#gif-form{
+#gif-form {
     float:right;
     width: 30%;
 }
@@ -53,6 +53,6 @@ body {
     border-color: black;
     }
 
-.submit{
+.submit {
    margin-top:15px;
 }

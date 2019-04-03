@@ -20,11 +20,8 @@ function buttons() {
 // adding new button
 $("#add-singer").on("click", function (event) {
     event.preventDefault();
-
-    var singer1 = $("#gif-input").val().trim();
-
-    topics.push(singer1);
-
+    var singerNew = $("#gif-input").val().trim();
+    topics.push(singerNew);
     buttons();
 });
 
@@ -53,34 +50,25 @@ function display() {
 
         for (var j = 0; j < results.length; j++) {
 
-            // create div to hold results
-            //var giphy = $("<div class=gifss>");
-
             // creating image variable
             var image = $("<img>");
 
+                image.attr("src", results[j].images.fixed_height_still.url);
+                image.attr("data-state", "still");
+                image.attr("data-still", results[j].images.fixed_height_still.url);
                 image.attr("data-animate", results[j].images.fixed_height.url);
             
-                image.attr("data-state","still");
-
-                image.attr("src", results[j].images.fixed_height_still.url);
-
-                image.attr("data-still", results[j].images.fixed_height_still.url);
-
-            
-            // adding class to each gif
+            // adding class to each image variable
             image.addClass("gif");
 
-            image.attr("data-animate", results[j].images.fixed_height.url)
-
-            // adding the gifs to the top of the page
+            // adding the gifs to page
             $(".gifs").prepend(image);
-
-            // creating p tag for rating of gif
-            var p = $("<p>").text("Rating: " + results[j].rating);
 
             // create new div for rating
             var rating = $('<div class="gif-rating">');
+
+            // creating p tag for rating of gif
+            var p = $("<p>").text("Rating: " + results[j].rating);
 
             // appending the p tag into the new rating variable 
             rating.append(p);
