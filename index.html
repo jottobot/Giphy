@@ -7,17 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="Assets/CSS/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Music Giphy</title>
 </head>
 
 <body>
 
-    <div id="container">
+    <div class="container">
 
-        <!-- page title  -->
-        <h1 class="title">
-            Music Gifs!
-        </h1>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4" id="title">Musical Giphy</h1>
+                <p class="lead">Who is your favorite musical artist? Let's get some gifs!</p>
+            </div>
+        </div>
 
         <!-- buttons will show up here  -->
         <div id="buttons">
@@ -25,6 +29,7 @@
         </div>
 
         <!-- search input box  -->
+        <div class="search">
         <form id="gif-form">
             <label id="label">
                 Add your favorite musical artist!
@@ -35,6 +40,7 @@
             <!-- submit button -->
             <input id="add-singer" type="submit" value="Add artist">
         </form>
+    </div>
 
         <!-- gifs will show up here  -->
         <div class="gifs"></div>
@@ -43,4 +49,5 @@
 
     <script src="Assets/Javascript/app.js"></script>
 </body>
+
 </html>

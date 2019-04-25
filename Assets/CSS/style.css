@@ -2,35 +2,44 @@ body {
     background-color: lightgray;
 }
 
-#container {
-    width: 80%;
-    margin: 30px auto;
+.container {
+    
 }
 
-.title {
+#title {
     font-family: 'Courier New', Courier, monospace;
     font-size: 40px;
     text-align: center;
     margin-bottom: 50px;
 }
 
-#gifs {
-    float: left;
-    width: 70%;
+.lead {
+    text-align: center;
 }
 
-#gif-form {
+/* #gifs {
+    float: left;
+    width: 70%;
+} */
+
+/* #gif-form {
     float:right;
     width: 30%;
-}
+} */
 
 #label {
     margin-bottom: 10px;
+    text-align:center;
 }
 
 #gif-input {
     font-size: 15px;
     margin-left: 20px;
+}
+
+.search {
+    text-align: center;
+    margin-top: 50px;
 }
 
 #add-singer {
