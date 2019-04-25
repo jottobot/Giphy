@@ -1,6 +1,6 @@
 # Giphy
 
-Technologies used: HTML, CSS, jQuery, API documentation.
+Technologies used: HTML, Bootstrap, CSS, JS/jQuery, API documentation/AJAX calls.
 
 ## About
 
