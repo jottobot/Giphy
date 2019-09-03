@@ -1,9 +1,18 @@
 # Giphy
 
-Technologies used: HTML, CSS, jQuery, API documentation.
+## Overview
+Application generating GIFs of musicians.
 
-## About
+## Technologies
+* HTML
+* CSS
+* Bootstrap
+* jQuery
+* API documenation
+* AJAX
 
-On this site you will see a handful of buttons with musical artists on them. You may also add a new button with your artist of choice. When the button is clicked, the user will be displayed 10 still GIFs of that artist. Clicking on the still GIF allows the GIF to move.
+## Usage
+On this site you will see a handful of buttons with musical artists on them. You may also add a new button with an artist of your choice. When the button is clicked, the user will be displayed 10 still GIFs of that artist. Clicking on the still GIF allows the GIF to move, reclicking on the moving GIF stills the GIF again.
 
-Deployed at: https://jottobot.github.io/Giphy/
+## Deployed 
+https://jottobot.github.io/Giphy/
